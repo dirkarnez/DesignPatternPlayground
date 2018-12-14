@@ -6,7 +6,10 @@ namespace DesignPatternPlayground
     {
         static void Main(string[] args)
         {
-            new StrategyPatternProvider().GetById("B").SayHi();
+            var sth = new StrategyPatternProvider().GetById("B");
+            Console.WriteLine(sth.Name);
+            // sth.Name = "Arbitary set"; // is blocked.
+            sth.SayHi();
             Console.ReadLine();
         }
     }

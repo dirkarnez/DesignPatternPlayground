@@ -31,8 +31,8 @@ namespace DesignPatternPlayground
 
     public abstract class StrategyPattern : IEquatable<StrategyPattern>
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public abstract string Id { get; protected set; }
+        public abstract string Name { get; protected set; }
 
         public abstract void SayHi();
 
@@ -44,11 +44,8 @@ namespace DesignPatternPlayground
 
     public class StrategyPatternA : StrategyPattern
     {
-        public StrategyPatternA()
-        {
-            Id = "A";
-            Name = "StrategyPatternA";
-        }
+        public override string Id { get { return "A"; } protected set { } }
+        public override string Name { get { return "StrategyPatternA"; } protected set { } }
 
         public override void SayHi()
         {
@@ -58,11 +55,8 @@ namespace DesignPatternPlayground
 
     public class StrategyPatternB : StrategyPattern
     {
-        public StrategyPatternB()
-        {
-            Id = "B";
-            Name = "StrategyPatternB";
-        }
+        public override string Id { get { return "B"; } protected set { } }
+        public override string Name { get { return "StrategyPatternB"; } protected set { } }
 
         public override void SayHi()
         {
